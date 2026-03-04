@@ -1,3 +1,15 @@
+<!--
+  index.html - главная страница сайта.
+  Это главный файл, который видит пользователь при заходе на сайт.
+  Здесь находятся несколько крупных блоков:
+    * навигационный бар – меню сверху со ссылками на другие страницы.
+    * фоновое видео – проигрывается по всему экрану.
+    * карусель игроков – слайды с фотографиями и описанием лидеров.
+    * кнопка "Поддержать команду" с счётчиком – нажимая, вы увеличиваете число и видите плавающее сердце.
+    * расписание матчей (прошедшие и предстоящие) – таблицы с результатами и датами.
+    * информационные карточки и футер – дополнительный текст и ссылки.
+  Комментарии внутри страницы поясняют каждый раздел, чтобы понять, что делает каждая часть.
+-->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -62,6 +74,7 @@ body {
 </head>
 
 <body>
+  <!-- верхний навигационный блок с логотипом и ссылками на другие страницы -->
   <header>
     <nav class="navbar navbar-expand-lg" style="background-color: #000000; border-bottom: 3px solid #C8102E;">
   <div class="container-fluid">
@@ -83,11 +96,11 @@ body {
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://www.instagram.com/liverpoolfc/" target="_blank">
-            <img style="width: 30px;" src="source/files/inst.png" alt="Instagram">
+            <img style="width: 30px;" src="source/files/Inst.png" alt="Instagram">
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://t.me/LiverpoolFC" target="_blank">
+          <a class="nav-link" href="https://t.me/Liverpool" target="_blank">
             <img style="width: 25px;" src="source/files/tg.png" alt="Telegram">
           </a>
         </li>
@@ -97,6 +110,7 @@ body {
 </nav>
   </header>
 
+  <!-- основной контент: видеофон + блоки с каруселью/расписанием -->
   <section>
     <div class="bgvideo">
       <video autoplay muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover;">
@@ -217,26 +231,26 @@ body {
                   <div class="card-body">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                       <small style="background-color: #C8102E; color: white; padding: 5px 12px; border-radius: 20px; font-weight: bold;">АПЛ</small>
-                      <small style="color: #666;">16 февраля 2026 • 15:00</small>
-                      <small style="background-color: #4CAF50; color: white; padding: 5px 12px; border-radius: 20px; font-weight: bold;">🏠 Энфилд</small>
+                      <small style="color: #666;">4 марта 2026 • 01:15</small>
+                      <small style="background-color: #FF6B6B; color: white; padding: 5px 12px; border-radius: 20px; font-weight: bold;">✈️ Гости </small>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-3">
                       <div style="text-align: center; flex: 1;">
-                        <h5 class="fw-bold" style="color: #C8102E; margin: 0;">Ливерпуль</h5>
-                        <h3 class="fw-bold" style="color: #C8102E; margin: 5px 0;">3</h3>
+                        <h5 class="fw-bold" style="color: #ebae06; margin: 0;">Вулверхэмптон</h5>
+                        <h3 class="fw-bold" style="color: #ebae06; margin: 5px 0;">2</h3>
                       </div>
                       <div style="text-align: center; flex: 1; color: #999;">
                         <span style="font-size: 1.2rem;">-</span>
                       </div>
                       <div style="text-align: center; flex: 1;">
-                        <h5 class="fw-bold" style="color: #1976D2; margin: 0;">Челси</h5>
-                        <h3 class="fw-bold" style="color: #1976D2; margin: 5px 0;">1</h3>
+                        <h5 class="fw-bold" style="color: #C8102E; margin: 0;">Ливерпуль</h5>
+                        <h3 class="fw-bold" style="color: #C8102E; margin: 5px 0;">1</h3>
                       </div>
                     </div>
                     <div style="background-color: #f0f0f0; padding: 10px; border-radius: 8px; font-size: 0.9rem; color: #333;">
                       <strong>Голы:</strong><br>
                       🔴 <strong>Ливерпуль:</strong> Мохаммед Салах (22'), Коди Гакпо (45'), Доминик Собослаи (67')<br>
-                      🔵 <strong>Челси:</strong> Николо Барелла (38')
+                      🔵 <strong>Челси:</strong> Родриго Гомес (38')
                     </div>
                   </div>
                 </div>
@@ -451,13 +465,15 @@ body {
 </style>
 
 <script>
+  // находим кнопку и место, куда выводим число кликов
   const fanBtn = document.getElementById('fan-btn');
   const counterDisplay = document.getElementById('click-counter');
   
-  // Получаем количество кликов из памяти браузера
-  let clicks = localStorage.getItem('liverpoolFanClicks') || 0;
-  counterDisplay.innerText = clicks;
+  // читаем ранее сохранённый счёт из localStorage (это как маленькая база данных в браузере)
+  let clicks = localStorage.getItem('liverpoolFanClicks') || 0; // если нет данных – ноль
+  counterDisplay.innerText = clicks; // показываем текущее значение на странице
 
+  // когда пользователь нажимает кнопку, срабатывает этот обработчик
   fanBtn.addEventListener('click', function(e) {
     // Увеличиваем счетчик
     clicks++;
@@ -497,7 +513,7 @@ body {
           <p class="mb-0">© 2026 Ливерпуль ФК. Все права защищены.</p>
         </div>
         <div class="col-lg-4 col-md-12 footer-text text-center mt-2 fw-semibold">
-          <p class="mb-0">Легенды клуба <br> Академия <br> Сообщество фанатов</p>
+          <p class="mb-0"> <a href="https://www.fourfourtwo.com/features/ranked-the-50-best-liverpool-players-ever" target="_blank" style="color: #C8102E;"> Легенды клуба </a> <br> <a href="https://www.liverpoolfc.com/team/academy" target="_blank" style="color: #C8102E;"> Академия </a> <br> <a href="https://www.liverpoolfc.com/info/fan-forums" target="_blank" style="color: #C8102E;"> Сообщество фанатов</a></p>
         </div>
         <div class="col-lg-4 col-md-12 media-links text-center mt-2">
           <img style="width: 40px; margin-inline: 1em; cursor: pointer;" src="source/files/yt.png" alt="YouTube">
