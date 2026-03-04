@@ -1,7 +1,21 @@
+<!--
+  history.html - страница истории и достижений клуба.
+  Здесь рассказано как появился клуб, ключевые тренеры и годы,
+  перечислены все трофеи и даны памятные рекорды и моменты.
+  Секция «герой» вверху делает страницу красивой,
+  далее идут карточки с трофеями и списки легенд.
+  Комментарии помогают понять структуру кода.
+-->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="source/files/favicon_io/liverpoolicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="source/files/favicon_io/liverpoolicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="source/files/favicon_io/liverpoolicon.png">
+  <link rel="manifest" href="source/files/favicon_io/site.webmanifest">
+
   <title>Ливерпуль ФК - История и Награды</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +34,7 @@
 </head>
 <body>
 
+  <!-- навигационная панель на странице истории (повторяет главный бар с ссылками) -->
   <nav class="navbar navbar-expand-lg" style="background-color: #000000; border-bottom: 3px solid #C8102E;">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" style="font-weight: 800; color: #C8102E; font-size: 1.5em;">🔴 Ливерпуль ФК</a>
@@ -35,11 +50,11 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.instagram.com/liverpoolfc/" target="_blank">
-              <img style="width: 30px;" src="source/files/inst.png" alt="Instagram">
+              <img style="width: 30px;" src="source/files/Inst.png" alt="Instagram">
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://t.me/LiverpoolFC" target="_blank">
+            <a class="nav-link" href="https://t.me/Liverpool" target="_blank">
               <img style="width: 25px;" src="source/files/tg.png" alt="Telegram">
             </a>
           </li>
@@ -48,6 +63,7 @@
     </div>
   </nav>
 
+  <!-- большой баннер‑герой с фоном на тему Энифлда и вводным текстом -->
   <div class="hero-history text-center">
     <div class="container">
       <h1 class="display-3 fw-bold">Наследие «Энфилда»</h1>
@@ -150,5 +166,23 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <footer class="mt-4 py-3" style="background-color: #000; color: white;">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 footer-text text-center mt-2 fw-semibold">
+          <p class="mb-0">© 2026 Ливерпуль ФК. Все права защищены.</p>
+        </div>
+        <div class="col-lg-4 col-md-12 footer-text text-center mt-2 fw-semibold">
+          <p class="mb-0"> <a href="https://www.fourfourtwo.com/features/ranked-the-50-best-liverpool-players-ever" target="_blank" style="color: #C8102E;"> Легенды клуба </a> <br> <a href="https://www.liverpoolfc.com/team/academy" target="_blank" style="color: #C8102E;"> Академия </a> <br> <a href="https://www.liverpoolfc.com/info/fan-forums" target="_blank" style="color: #C8102E;"> Сообщество фанатов</a></p>
+        </div>
+        <div class="col-lg-4 col-md-12 media-links text-center mt-2">
+          <img style="width: 40px; margin-inline: 1em; cursor: pointer;" src="source/files/yt.png" alt="YouTube">
+          <img style="width: 40px; margin-inline: 1em; cursor: pointer;" src="source/files/tg.png" alt="Telegram">
+        </div>
+      </div>
+    </div>
+  </footer>
+  
 </body>
 </html>
